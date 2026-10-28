@@ -1,0 +1,262 @@
+# WARNING: this list contains profanity, slurs, sexual and violent words, and drug and suicide-related terms. Auto-glosses come from the source frequency deck and may be wrong.
+rank	word	auto-gloss (from the source frequency deck; may be wrong)
+151	god	name day; anniversary, holiday; ring
+176	sranje	bullshit; the process of excretion, verbal noun of srȁti; on
+312	ovoj	wrapping, shell, casing, covering
+342	žele	jelly
+351	bile	moreover, even
+537	jebote	fuck, holy shit, for fuck's sake
+539	dupe	ass
+550	kurac	penis, dick, cock; dick, cock; nothing, squat, jack, fuck al
+576	de	where
+623	para	para; money
+640	živa	mercury
+711	ben	birthmark; mole; naevus
+714	jela	
+735	kamo	where , in which direction, whither
+788	kreten	cretin; idiot
+807	pali	Pali
+808	veće	council
+820	bob	bobsled
+871	bas	bass
+896	počelo	principle, element; foundation, base
+902	kopile	bastard
+912	govno	shit; nonsense, bullshit; rubbish, worthless matter
+943	los	moose; elk
+962	milja	mile
+964	đubre	manure; trash, garbage; any kind of worthless object
+990	kurva	whore, prostitute; bitch, slut
+1008	kučka	bitch, dam; bitch
+1042	duha	smell, stench, odor
+1057	ured	office; bureau
+1087	lisa	blaze
+1103	udar	stroke, hit; attack, strike; impact
+1120	sred	in the middle of
+1123	ubojica	murderer, killer
+1139	poručnik	lieutenant
+1140	peta	heel
+1143	pukovnik	colonel
+1144	nosila	stretcher, gurney
+1145	ovoliko	this much/many, so much/many, as much/many
+1149	kris	kris
+1157	samoubistvo	suicide
+1163	če	if
+1198	in	other
+1210	go	naked, nude, bare
+1224	bela	belote
+1227	kvragu	damn damnit; damn! damnit!
+1241	kuca	doggy, puppy
+1252	seronja	asshole; bullshitter
+1279	krivo	awry; wrongly
+1315	di	where; whither, where, whereto
+1319	nevjerojatno	incredibly, unlikely, unbelievably, improbably
+1323	ćale	father
+1332	puca	girl
+1348	povodom	regarding, with regard to
+1350	godišnje	a year
+1361	rob	slave
+1372	leš	corpse
+1383	izvesti	to bring out, carry out, lead out; to derive, conclude; to c
+1384	vile	pitchfork
+1386	ludak	madman
+1395	suzan	tearful
+1398	skot	litter; evil and merciless person
+1403	zauzeti	to take over, capture, seize; to occupy, take possession of;
+1409	top	cannon; rook
+1415	gaće	underpants
+1420	sprema	qualification, training
+1424	vrag	devil; hell
+1450	tačke	wheelbarrow
+1452	spoj	junction, juncture; connection, union; date
+1454	so	salt
+1456	teri	which, what; which, that, who; some
+1459	sef	safe, strongbox
+1460	liz	a lick
+1462	alibi	alibi
+1465	dobit	profit
+1469	boj	battle
+1491	lord	lord
+1501	zabrinuti	to worry, upset
+1506	snimanje	recording
+1509	rosa	dew
+1511	džin	gin
+1529	smetalo	a person who disturbs
+1540	daviti	to choke, to strangle
+1545	naopako	upside down; inside out; inversely, reversed
+1549	telefonski	by using a telephone; telephone
+1556	vojni	armed forces; military
+1561	širi	comparative degree of šìrok
+1569	bejzbol	baseball
+1575	rez	cut; incision
+1577	mobitel	cell phone
+1584	zena	pupil
+1593	trojica	three men
+1599	gad	a repulsive person; scoundrel; cad
+1605	puls	pulse
+1610	peder	a gay person, homosexual ; fag, homo, queer
+1614	penis	penis
+1628	nalik	like, similar; resembling, similar
+1636	mraz	frost; chill
+1637	pandur	policeman; tipstaff; redcoat
+1645	svetski	globally; in a civilized, cultured way; worldly, earthly, mu
+1656	odande	from there
+1660	živo	lively, briskly, actively, sharply; clearly
+1681	kit	whale
+1702	santa	iceberg
+1711	pojačanje	amplification
+1739	marš	march; scram, get out of here
+1743	uzet	palsied, paralytic, paralyzed
+1745	jok	no, nope
+1748	jebiga	fuck it, what are you going to do
+1750	smrad	stench, stink
+1751	jezivo	terrifyingly, horrifyingly; awfully, badly
+1756	snaći	to befall, happen; to get by, to manage on one's own
+1764	alfa	alpha; the Greek letter Α, α
+1793	papa	pope
+1794	imanje	possession, holding; land, landed estate; realty, demesne
+1798	pomisao	thought, idea
+1800	brus	whetstone, grindstone
+1808	faca	face; person, guy
+1830	četvoro	four persons of different gender/sex
+1845	kime	with whom
+1849	crnac	black
+1859	vid	eyesight; eyeshot; aspect
+1869	zamisao	idea, conception
+1872	prazno	emptily, vacantly
+1885	obučen	dressed
+1890	nisko	low, lowly; basely, vulgarly, meanly
+1896	korisno	usefully, purposefully
+1897	lažno	falsely
+1908	pile	chick
+1909	rodni	birth; kin; native
+1913	spolja	from outside
+1918	but	thigh; ham
+1951	plen	booty, plunder
+1959	las	hair
+1963	roj	swarm
+1972	zraka	ray, beam; ray, half-line
+1974	kokain	cocaine
+2001	fil	elephant
+2003	upala	inflammation, pneumonia
+2019	kila	hernia
+2035	tona	tonne; ton
+2037	tumor	tumor
+2039	pranje	laundering, washing
+2045	šupak	asshole, anus; asshole, jerk; butt, ass
+2048	silovanje	rape, raping
+2050	dopasti	to get into, receive, be hit by something malicious; to plea
+2057	tara	tare
+2059	gaćice	panties
+2064	nevinost	innocence; chastity
+2065	kompa	friend, buddy, chum
+2077	le	only
+2080	utočište	shelter, refuge, asylum
+2082	svemirski	cosmic, universe
+2090	vojna	military campaign; war
+2110	čip	chip
+2111	diler	drug dealer
+2120	kat	floor, storey
+2125	uistinu	indeed, truly
+2126	raja	commoners, rayah; a band, group, notably of friends; a crowd
+2130	tuča	hail
+2132	pretio	obese
+2133	grof	count; earl
+2136	džabe	free, for free, gratis; cheap, inexpensive, affordable; in v
+2140	val	wave
+2149	pila	saw
+2156	tatica	dad, daddy
+2168	pop	priest
+2170	južno	south, southwards
+2174	drolja	slut
+2185	poker	poker
+2190	kum	sand
+2198	telegram	telegram
+2201	devica	virgin; damsel, maid, maiden, girl
+2212	ludnica	madhouse
+2223	ala	dragon, type of mythical creature similar to dragon; express
+2227	pat	stalemate
+2228	serijski	serially; serial
+2233	angel	angel
+2272	preterano	excessively, unduly, too
+2275	lane	fawn; an affectionate term, dear child; last year
+2283	zaklon	shelter, covert
+2285	karton	cardboard, paperboard
+2288	ve	now
+2290	konopac	rope, cord
+2293	bira	beer
+2295	istinski	authentically, genuinely, truly; authentic, genuine, true
+2299	stroj	array; formation
+2304	kladiti	to bet, wager
+2306	eksploziv	explosive
+2312	kadi	where
+2313	pobiti	to kill, slaughter; to refute, disprove; to fight
+2325	severno	north, northwards
+2328	milje	milieu
+2329	voljno	willingly; voluntarily
+2335	jen	yen; one
+2339	prsa	chest; breasts; idiomatic and figurative meanings
+2345	amber	amber
+2347	faks	Shortened for fakùltēt
+2350	itekako	definitely
+2352	milo	dearly, kindly, cordially
+2356	okidač	trigger
+2361	videlo	light, daylight
+2366	belac	A white male; A white horse
+2378	crevo	intestine; hose
+2379	vis	height; summit
+2380	heroin	heroin
+2381	bal	ball
+2397	izabran	chosen, selected
+2410	jime	name
+2414	ura	hour; a clock, watch; time, period
+2418	debelo	outrageously, excessively
+2420	sala	stretcher
+2424	sindi	Sindhi
+2430	kita	bunch, bouquet; penis; pretty girl
+2434	profesionalno	professionally
+2451	lola	boyfriend, darling; idler, loafer; carouser
+2452	lava	lava
+2468	švorc	broke
+2476	nakaza	freak, monster
+2479	motel	motel
+2482	več	more; plus
+2483	pušten	released
+2489	teksas	denim
+2498	ranč	ranch
+2507	oslobođen	released
+2515	ljubavnica	lover; mistress
+2518	poremećaj	disorder
+2519	dobiće	a win; a profit
+2526	guzica	butt
+2530	frajer	guy; an attractive man, hunk; dandy, fop
+2533	teme	top, crown; top, apex
+2538	dosje	dossier
+2547	buraz	bro, brother, broski
+2551	prah	powder
+2554	maršal	marshal
+2567	debi	debut
+2581	masa	mass
+2583	prostitutka	whore, prostitute
+2584	glupan	idiot, fool, dumbass
+2585	otok	swelling
+2588	varalica	impostor, swindler
+2590	zapadno	west, westwards
+2591	minus	minus sign; minuns, defect, deficiency
+2592	manijak	maniac
+2605	jadnik	miserable person; weak or worthless person
+2609	testament	the will
+2611	juriš	charge; dash; onset
+2613	umorno	tiredly
+2614	apsurdno	absurdly
+2617	kokice	popcorn
+2618	trupa	troupe
+2622	pribor	equipment, kit, supplies, gear, set; tool, instrument, gadge
+2639	dobrobit	well being, health; sake
+2647	krvni	blood
+2650	vojvoda	duke
+2653	petoro	five persons of different gender/sex
+2657	delta	delta, the Greek letter Δ, δ
+2671	curica	a little girl
+2674	tužiti	to grieve, mourn; to lament
+2679	povratiti	to regurgitate, vomit, throw up; to give back, return; to re
+2681	doušnik	informer

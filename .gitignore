@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+._*
+
+# Decks are distributed as GitHub Release assets, not in git
+*.apkg
+
+# Pipeline working data (regenerate: plan_audio.py for clip plans, tts_batch.py for audio)
+_work_audio/
