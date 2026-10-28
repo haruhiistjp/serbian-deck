@@ -25,6 +25,8 @@ Each deck uses its own note type, so importing does not affect other decks. Test
 
 ## Card design
 
+**Script.** The cards are written in Latin script. The vocabulary deck also has a Cyrillic form of each word, shown only on the back of the card. The verb deck has no Cyrillic. Audio was generated from the Latin text, not from the Cyrillic.
+
 **Vocabulary** (note type `Serbian Frequency (word→meaning, audio)`, one card per note)
 
 - Fields: `Rank`, `Word`, `Cyrillic`, `POS`, `Meaning`, `Example1`, `Example1_EN`, `Example2`, `Example2_EN`, `Word_Audio`, `Example1_Audio`, `Example2_Audio`.
