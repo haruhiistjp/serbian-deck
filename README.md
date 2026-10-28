@@ -117,4 +117,7 @@ python3 -m venv .venv
 
 ## License
 
-This work is licensed under [CC BY-SA 4.0](LICENSE). That covers the decks, audio, documentation and scripts.
+The project uses two licenses:
+
+- **Content** (the decks and their audio, `README.md`, `PROJECT_NOTES.md`, `skipped_entries.txt`): [CC BY-SA 4.0](LICENSE).
+- **Code** (the Python scripts, `requirements.txt`, `.gitignore`): [MIT](LICENSE-MIT).
