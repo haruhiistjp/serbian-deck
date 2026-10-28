@@ -7,7 +7,7 @@ Two Anki decks for learners of Serbian, with Serbian audio on every headword and
 | Vocabulary | `Serbian_Frequency.apkg` | 2,293 | 6,879 | Latin word → Cyrillic, part of speech, meaning, two example sentences with translations; ordered by frequency |
 | Verb patterns | `Serbian_Verbs.apkg` | 150 | 300 | 50 common verbs × 3 gap-sentence cards each, with the present paradigm, past forms and aspect partner |
 
-> **Status.** Every meaning, example sentence, translation and verb paradigm was written by an AI assistant (Claude) and has **not been reviewed by a native speaker**. All audio is machine-generated. Expect occasional unnatural phrasing or pronunciation errors. Corrections are welcome.
+> **Status.** Every meaning, example sentence, translation and verb paradigm was written by an AI assistant (Claude). All audio is machine-generated. A **random sample** of the text and audio was proofread by a native Serbian speaker; the rest of the deck has not been reviewed. Expect occasional unnatural phrasing or pronunciation errors outside the sample. Corrections are welcome.
 
 ## Download and import
 
@@ -73,7 +73,7 @@ Meanings, example sentences, translations, verb paradigms, card templates and bu
 
 ## Known limitations
 
-- No native-speaker review of text or audio.
+- Only a random sample of text and audio was checked by a native speaker. The rest of the deck is unreviewed.
 - Frequency order is inherited from the source list. Its corpus is not documented, and the list leans toward conversational and film-style vocabulary (for example crime and police words rank fairly high).
 - Some multi-sense words are compressed into one card, and a few grammatical particles have loose glosses. Each card lists its senses in the meaning field.
 - Cyrillic is generated automatically by a Latin→Cyrillic transliteration script and has not been proof-read.
