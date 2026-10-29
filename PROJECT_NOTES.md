@@ -16,6 +16,12 @@ Two importable Anki decks exist, built from the user's unvoiced source decks:
 |---|---|---|---|---|
 | `Serbian_Frequency.apkg` | 75.7 MB | 2,293 | 6,879 | 143.8 min |
 | `Serbian_Verbs.apkg` | 3.3 MB | 150 | 300 | 6.1 min |
+| `Serbian_Frequency_RU.apkg` | 72.3 MB | 2,293 | 6,879 (same clips) | 143.8 min |
+| `Serbian_Verbs_RU.apkg` | 3.2 MB | 150 | 300 (same clips) | 6.1 min |
+
+The Russian decks are the same cards with English glosses and translations
+replaced by Russian (see "Russian decks" below). They reuse the English decks'
+audio files, byte for byte, so no clips were synthesized for them.
 
 Voices are Google **Gemini TTS** (`gemini-3.8-flash-tts`, `sr-RS`), five of the
 30 prebuilt voices, drawn at random per clip with a fixed seed.
@@ -157,12 +163,16 @@ missing or outside 0.15–25 s.
 
 ### 4. `build_audio_decks.py`
 
-Packages both decks with genanki.
+Packages the decks with genanki: English and Russian by default.
 
 ```
 .venv/bin/python build_audio_decks.py
-# or: --deck freq|verb   --outdir DIR   --workdir DIR
+# or: --deck freq|verb   --lang en|ru   --outdir DIR   --workdir DIR
 ```
+
+Writes `Serbian_Frequency.apkg`, `Serbian_Verbs.apkg`, `Serbian_Frequency_RU.apkg`
+and `Serbian_Verbs_RU.apkg` in the repository root. `--lang ru` rebuilds only the
+Russian decks from `translations/ru/`.
 
 ### 5. `verify_decks.py`
 
@@ -174,6 +184,50 @@ unreferenced media, note/card counts match, no clips under 0.25 s.
 ```
 
 ---
+
+## Russian decks
+
+### Files
+
+- `translations/ru/freq.tsv`: `rank`, `meaning_ru`, `example1_ru`, `example2_ru`.
+  One row per vocabulary note, keyed by rank (ranks are unique).
+- `translations/ru/verbs.tsv`: `guid`, `gloss_ru`, `english_ru`, `note_ru`, `pair_ru`.
+  One row per verb note, keyed by the note GUID (verb ranks repeat across a verb's
+  three cards, so rank is not a key).
+
+Part-of-speech labels are not in the TSV: `build_audio_decks.py` maps the English
+POS to Russian with the `POS_RU` table (`сущ.`, `гл.`, `нар.`, `прил.`, …).
+Serbian forms (the verb in `pair_ru`, the forms in `note_ru`, the pronoun cues in
+`Person`) are kept as written.
+
+### How they were made
+
+The English text was translated in nine parallel batches (eight of 288 and one
+of 277 vocabulary rows, plus one batch of 150 verb rows). Each batch read its
+input and wrote its output file directly; the batches shared a glossary
+(*yes* = да, *I* = я, *to be* = быть, *pf* = сов. вид, *impf* = несов. вид) and
+were told to use the Serbian sentences only to resolve ambiguity.
+
+Checks run before the decks were built:
+
+- row count and column count per file; ranks 1–2293 present once each;
+- no empty translation where the English is non-empty;
+- every translated field contains Cyrillic (the only Latin left is *Golf*, a car
+  model name);
+- a manual read of the first 20 vocabulary rows and a random sample of others.
+
+The translations have **not** been reviewed by a native Russian speaker.
+
+### Building and checking
+
+```
+.venv/bin/python build_audio_decks.py --lang ru
+.venv/bin/python verify_decks.py Serbian_Frequency_RU.apkg Serbian_Verbs_RU.apkg
+```
+
+The Russian note types have their own IDs and GUID prefixes, so they can be
+imported next to the English decks. Their media filenames and contents are
+identical to the English decks, so shared filenames always refer to the same file.
 
 ## Fixed constants
 
@@ -190,6 +244,10 @@ Change these only deliberately.
 | Verb model ID / deck ID | `1700000000031` / `1700000000032` |
 | Deck names | `Serbian::Frequency (Audio)`, `Serbian::Verbs (Audio)` |
 | GUID prefixes | `sr_freq_audio`, `sr_verb_audio` |
+| Russian frequency model ID / deck ID | `1700000000041` / `1700000000042` |
+| Russian verb model ID / deck ID | `1700000000051` / `1700000000052` |
+| Russian deck names | `Serbian-Russian::Frequency (Audio)`, `Serbian-Russian::Verbs (Audio)` |
+| Russian GUID prefixes | `sr_freq_audio_ru`, `sr_verb_audio_ru` |
 
 GUIDs are `genanki.guid_for(prefix, original_note_guid)`, so re-importing a
 rebuilt deck updates its own notes rather than duplicating, and can never

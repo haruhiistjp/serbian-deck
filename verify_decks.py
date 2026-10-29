@@ -25,6 +25,8 @@ ROOT = Path(__file__).resolve().parent
 DEFAULT_DECKS = [
     ROOT / "Serbian_Frequency.apkg",
     ROOT / "Serbian_Verbs.apkg",
+    ROOT / "Serbian_Frequency_RU.apkg",
+    ROOT / "Serbian_Verbs_RU.apkg",
 ]
 
 SOUND = re.compile(r"\[sound:([^\]]+)\]")
