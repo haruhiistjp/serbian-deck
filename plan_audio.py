@@ -13,7 +13,9 @@ Voice scheme (the four voices that scored 0.99 on the Đ test):
     female pool  Kore, Autonoe, Vindemiatrix
 
     frequency deck   word alternates by rank (odd male / even female),
-                     Example1 always male, Example2 always female
+                     Example1 male, Example2 female; where a sentence is
+                     spoken by the other gender, the examples are swapped
+                     (speaker_gender.tsv), see PROJECT_NOTES.md
     verb deck        the missing form (Answer) male, the sentence female
 
 Voices are drawn at random per clip from the matching pool, with a fixed
@@ -45,10 +47,28 @@ FEMALE = ["Kore", "Autonoe", "Vindemiatrix"]
 
 SEED = 20261027
 rng = random.Random(SEED)
+override_rng = random.Random(SEED + 1)
+
+SPEAKERS = ROOT / "speaker_gender.tsv"
 
 
 def pick(pool: list[str]) -> str:
     return rng.choice(pool)
+
+
+def load_speakers() -> dict[int, tuple[str, str]]:
+    """Speaker gender per example (M, F or N = neutral), keyed by rank."""
+    out = {}
+    lines = SPEAKERS.read_text(encoding="utf-8").splitlines()[1:]
+    for line in lines:
+        rank, ex1, ex2 = line.split("\t")
+        out[int(rank)] = (ex1, ex2)
+    return out
+
+
+def fits(slot: int, speaker: str) -> bool:
+    """Slot 1 is read by a male voice, slot 2 by a female voice."""
+    return speaker == "N" or (speaker == "M" and slot == 1) or (speaker == "F" and slot == 2)
 
 
 def clean(text: str) -> str:
@@ -80,23 +100,45 @@ def read_deck(path: Path) -> list[dict]:
 
 def plan_freq() -> dict:
     notes = read_deck(FREQ_DECK)
+    speakers = load_speakers()
     out, clips = [], []
+    swaps = overrides = 0
     for n in notes:
         rank = int(n["Rank"])
         word_voice = pick(MALE if rank % 2 == 1 else FEMALE)
         ex1_voice = pick(MALE)
         ex2_voice = pick(FEMALE)
 
+        s1, s2 = speakers.get(rank, ("N", "N"))
+        swapped = False
+        if fits(1, s1) and fits(2, s2):
+            pass
+        elif fits(1, s2) and fits(2, s1):
+            swapped = True
+            swaps += 1
+        else:
+            overrides += 1
+            if not fits(2, s2):
+                ex2_voice = override_rng.choice(MALE)
+            if not fits(1, s1):
+                ex1_voice = override_rng.choice(FEMALE)
+
+        ex1_raw, ex2_raw = n["Example1"], n["Example2"]
+        ex1_en, ex2_en = n["Example1_EN"], n["Example2_EN"]
+        if swapped:
+            ex1_raw, ex2_raw = ex2_raw, ex1_raw
+            ex1_en, ex2_en = ex2_en, ex1_en
+
         key = f"f{rank:04d}"
         names = {
             "word": f"{key}_{'m' if word_voice in MALE else 'f'}_word.mp3",
-            "ex1": f"{key}_m_ex1.mp3",
-            "ex2": f"{key}_f_ex2.mp3",
+            "ex1": f"{key}_{'m' if ex1_voice in MALE else 'f'}_ex1.mp3",
+            "ex2": f"{key}_{'m' if ex2_voice in MALE else 'f'}_ex2.mp3",
         }
         for field, voice, text in (
             ("word", word_voice, clean(n["Word"])),
-            ("ex1", ex1_voice, clean(n["Example1"])),
-            ("ex2", ex2_voice, clean(n["Example2"])),
+            ("ex1", ex1_voice, clean(ex1_raw)),
+            ("ex2", ex2_voice, clean(ex2_raw)),
         ):
             clips.append(
                 {
@@ -115,10 +157,11 @@ def plan_freq() -> dict:
                 "cyrillic": n["Cyrillic"],
                 "pos": n["POS"],
                 "meaning": n["Meaning"],
-                "example1": n["Example1"],
-                "example1_en": n["Example1_EN"],
-                "example2": n["Example2"],
-                "example2_en": n["Example2_EN"],
+                "example1": ex1_raw,
+                "example1_en": ex1_en,
+                "example2": ex2_raw,
+                "example2_en": ex2_en,
+                "swapped": swapped,
                 "word_audio": names["word"],
                 "example1_audio": names["ex1"],
                 "example2_audio": names["ex2"],
@@ -126,9 +169,10 @@ def plan_freq() -> dict:
                 "example1_voice": ex1_voice,
                 "example2_voice": ex2_voice,
                 "guid": n["_guid"],
-                "tags": n["_tags"],
+                "tags": [],
             }
         )
+    print(f"  examples swapped: {swaps}, voice overrides: {overrides}")
     return {"notes": out, "clips": clips}
 
 

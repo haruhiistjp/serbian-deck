@@ -96,14 +96,41 @@ so only these five are used.
 
 ### Assignment rule (implemented in `plan_audio.py`)
 
-- frequency deck: `Example1` always **male**, `Example2` always **female**,
+- frequency deck: `Example1` **male**, `Example2` **female**,
   headword alternates by rank parity (odd → male, even → female)
-  → 3,440 male / 3,439 female clips
 - verb deck: the missing form (`Answer`) **male**, the full sentence **female**
 - verb lemma is *not* voiced — it is already shown on the front as a cue
 - random per clip, `random.Random(20261027)`
 
 Re-running with the same seed reproduces the exact same voice assignment.
+
+### Speaker gender (fixed 2026-10-29)
+
+Serbian first-person forms carry the speaker's gender ("Napravila sam kolač",
+"Nisam uveren"). Voices were first assigned by slot only, so 79 sentences were
+spoken by a gender that did not match their voice (77 male speakers read by a
+female voice, 2 female speakers read by a male voice).
+
+- `speaker_gender.tsv`: for each affected note, the speaker of `Example1` and
+  `Example2` (`M`, `F`, or `N` = neutral). Checked by hand; the sentences
+  were found by pattern (sam/nisam + participle or adjective) and then read.
+- `plan_audio.py` applies, per note:
+  1. keep the slots if both examples fit (`Example1` male, `Example2` female;
+     neutral fits anywhere);
+  2. otherwise swap the two examples (text, English translation and Russian
+     translation move together) if that fits — 73 notes;
+  3. otherwise keep the order and give the slot that does not fit a voice of the
+     right gender — 6 notes where both sentences are spoken by a man, so
+     `Example2` uses a male voice (`f…_m_ex2`). These draws use their own seeded
+     generator (`SEED + 1`), so the main draws, and every other clip, are unchanged.
+- Result: 146 clips changed text (73 notes × 2), 6 clips changed voice. All
+  other clips and all verb clips are byte-identical to the previous plan.
+- The archived audio from before the fix is in `../Serbian_archive/faulty_audio/2026-10-29/`
+  (152 raw WAVs and MP3s, plus the old plan). The old decks are in
+  `../Serbian_archive/previous_decks/2026-10-29/`.
+
+The gender check covers the first-person forms it could identify. It does not
+cover every gendered form in the deck; a native speaker should listen to a sample.
 
 ---
 
@@ -212,8 +239,8 @@ Checks run before the decks were built:
 
 - row count and column count per file; ranks 1–2293 present once each;
 - no empty translation where the English is non-empty;
-- every translated field contains Cyrillic (the only Latin left is *Golf*, a car
-  model name);
+- every translated field contains Cyrillic (the only Latin left was *Golf*, a car
+  model name; it is now *Гольф*);
 - a manual read of the first 20 vocabulary rows and a random sample of others.
 
 The translations have **not** been reviewed by a native Russian speaker.
@@ -228,6 +255,17 @@ The translations have **not** been reviewed by a native Russian speaker.
 The Russian note types have their own IDs and GUID prefixes, so they can be
 imported next to the English decks. Their media filenames and contents are
 identical to the English decks, so shared filenames always refer to the same file.
+
+### Changes of 2026-10-29
+
+- Translation fixes: duplicate senses (ranks 7, 20, 23, 264, 393, 585), the
+  car model *Golf* (1131), and POS labels inside meanings (1448, 1554, 1665,
+  1703) were corrected. Rank 393 is now `ни … ни; и не`.
+- Speaker-gender voice fix (see "Speaker gender" above).
+- Tags: the 23 frequency band tags (`freq_0001-0100` …) and the `audio` tag
+  were removed. The vocabulary deck has no tags. The verb deck keeps its source
+  tags (`verbs`, `irregular`, `impf`, `pf`).
+- The four published decks were rebuilt; the previous versions are archived.
 
 ## Fixed constants
 

@@ -165,7 +165,9 @@ def load_ru_verbs() -> dict[str, dict]:
 
 
 def localize_freq_ru(note: dict) -> dict:
-    ru = load_ru_freq()[note["rank"]]
+    ru = dict(load_ru_freq()[note["rank"]])
+    if note.get("swapped"):
+        ru["example1_ru"], ru["example2_ru"] = ru["example2_ru"], ru["example1_ru"]
     return {"pos": POS_RU[note["pos"]], **ru}
 
 
@@ -202,7 +204,7 @@ def build(deck_key: str, *, model_id: int, model_name: str, deck_id: int,
             genanki.Note(
                 model=model,
                 fields=[values[name] for name in fields],
-                tags=note["tags"] + ["audio"],
+                tags=note["tags"],
                 guid=genanki.guid_for(guid_prefix, note["guid"]),
             )
         )

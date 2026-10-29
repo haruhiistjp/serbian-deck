@@ -47,7 +47,8 @@ Each deck uses its own note type, and the English and Russian decks have differe
 - Generated with Google Gemini text-to-speech (model `gemini-3.8-flash-tts`, language `sr-RS`). Text is sent in Latin script exactly as displayed.
 - Five prebuilt voices are used: male *Charon*, *Fenrir*; female *Kore*, *Autonoe*, *Vindemiatrix*. They were chosen after an audition of all 30 voices on Serbian sentences containing *đ*, which most voices rendered incorrectly.
 - Voice assignment is fixed by a seed, so rebuilding reproduces it.
-- In the vocabulary deck, example 1 is always male, example 2 always female, and the headword alternates by rank parity. In the verb deck, the completed form is male and the full sentence is female.
+- In the vocabulary deck, example 1 is read by a male voice, example 2 by a female voice, and the headword alternates by rank parity. In the verb deck, the completed form is male and the full sentence is female.
+- Serbian verbs in the first person change with the speaker's gender ("Napravila sam kolač" is said by a woman). Where a sentence was spoken by a different gender than its slot's voice, the two examples of that note are swapped, so the voice matches the speaker. In 6 notes both sentences are spoken by a man, so example 2 uses a male voice in those notes. The speakers are listed in `speaker_gender.tsv`.
 - Clips are silence-trimmed, level-matched (about −20 dBFS RMS) and encoded as MP3 mono 24 kHz, 64 kbps.
 - The Russian decks use the same clips as the English decks.
 - Google's terms state that Google does not claim ownership of content generated through its services.
@@ -88,6 +89,7 @@ Meanings, example sentences, translations, verb paradigms, card templates and bu
 
 - Only a random sample of the English text and audio was checked by a native speaker. The rest of the deck is unreviewed.
 - The Russian translations have not been reviewed by a native speaker.
+- The check that matched voices to speakers covers the gendered first-person forms it could identify. Other gendered forms may remain; a native speaker should listen to a sample.
 - Frequency order is inherited from the source list. Its corpus is not documented, and the list leans toward conversational and film-style vocabulary (for example crime and police words rank fairly high).
 - Some multi-sense words are compressed into one card, and a few grammatical particles have loose glosses. Each card lists its senses in the meaning field.
 - Cyrillic is generated automatically by a Latin→Cyrillic transliteration script and has not been proof-read.
@@ -101,6 +103,7 @@ README.md                     this file (English)
 README.ru.md                  Русская версия этого файла
 PROJECT_NOTES.md              detailed handover notes: voices, costs, repairs, gotchas
 skipped_entries.txt           omitted words, with a profanity warning
+speaker_gender.tsv            speaker gender of the example sentences that were checked by hand
 translations/ru/              Russian translations: freq.tsv (by rank), verbs.tsv (by guid)
 docs/history/                 earlier documentation, kept for reference
 source/                       (not in git) unvoiced English input decks, from the Releases page
